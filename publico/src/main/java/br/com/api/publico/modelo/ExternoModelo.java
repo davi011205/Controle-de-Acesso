@@ -12,9 +12,9 @@ import lombok.Setter;
 @Setter
 public class ExternoModelo {
 
-    private String nome;
     @Id
     private String rg; //obrigatorio
+    private String nome;
     private String cpf;
     private String foto; //url da foto da pessoa
     private String fotoDoc; //url da foto do doc da
@@ -28,5 +28,6 @@ public class ExternoModelo {
     private String email;
     private String data;
     private String outroDoc; //caso n tenha identidade/cnh
+    private String portaria;
 
 }

@@ -24,7 +24,7 @@ public class ExternoServico {
         return er.findAll();
     }
 
-    //metodo para cadastrar ou alterar produtos
+    //metodo para cadastrar ou alterar visitantes
     public ResponseEntity<?> cadastrarAlterar(ExternoModelo em, String acao) {
         if(em.getRg().equals("")) {
             rm.setMensagem("o rg é obrigatório");
@@ -63,6 +63,10 @@ public class ExternoServico {
             rm.setMensagem("o cpf deve conter 11 caracteres");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
         }
+        else if(em.getPortaria().equals("")) {
+            rm.setMensagem("preencha o campo 'portaria");
+            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        }
 
         else {
             if(acao.equals("cadastrar")) {
@@ -71,5 +75,13 @@ public class ExternoServico {
                 return new ResponseEntity<ExternoModelo>(er.save(em), HttpStatus.OK);
             }
         }
+    }
+
+    //metodo para remover visitante
+    public ResponseEntity<RespostaModelo> remover(String rg) {
+        er.deleteById(rg);
+
+        rm.setMensagem("O visitante foi removido com sucesso");
+        return new ResponseEntity<RespostaModelo>(rm, HttpStatus.OK);
     }
 }
