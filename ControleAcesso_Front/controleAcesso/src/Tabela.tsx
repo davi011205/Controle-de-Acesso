@@ -1,8 +1,10 @@
-function Tabela({vetor}) {
+function Tabela({vetor, selecionar}) {
+
     return (
         <table className="table">
             <thead>
                 <tr>
+                    <th>Nº</th>
                     <th>Data</th>
                     <th>Nome</th>
                     <th>Rg</th>
@@ -18,9 +20,9 @@ function Tabela({vetor}) {
 
             <tbody>
                 {
-                    vetor.map((obj) => (
-                        <tr >
-                            {/* <td>{indice+1}</td> */}
+                    vetor.map((obj, indice) => (
+                        <tr key={indice}>
+                            <td>{indice + 1}</td>
                             <td>{obj.data}</td>
                             <td>{obj.nome}</td>
                             <td>{obj.rg}</td>
@@ -30,7 +32,7 @@ function Tabela({vetor}) {
                             <td>{obj.fotoDoc}</td>
                             <td>{obj.sexo}</td>
                             <td>{obj.situacao}</td>
-                            <td><button className="btn btn-success">Visuazlizar</button></td>
+                            <td><button onClick={() => {selecionar(indice)}} className="btn btn-success">Visuazlizar</button></td>
                         </tr>
                     ))
                 }

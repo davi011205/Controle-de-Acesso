@@ -34,14 +34,14 @@ public class ExternoServico {
             rm.setMensagem("o rg deve conter 11 caracteres");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
         }
-        else if(em.getAtivo().equals("")) {
-            rm.setMensagem("o campo 'ativo' é obrigatório");
-            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-        }
-        else if(em.getData().equals("")) {
-            rm.setMensagem("a data é obrigatória");
-            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-        }
+        // else if(em.getAtivo().equals("")) {
+        //     rm.setMensagem("o campo 'ativo' é obrigatório");
+        //     return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        // }
+        // else if(em.getData().equals("")) {
+        //     rm.setMensagem("a data é obrigatória");
+        //     return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        // }
         else if(em.getEndereco().equals("")) {
             rm.setMensagem("o endereço é obrigatório");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
@@ -63,10 +63,10 @@ public class ExternoServico {
             rm.setMensagem("o cpf deve conter 11 caracteres");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
         }
-        else if(em.getPortaria().equals("")) {
-            rm.setMensagem("preencha o campo 'portaria");
-            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-        }
+        // else if(em.getPortaria().equals("")) {
+        //     rm.setMensagem("preencha o campo 'portaria");
+        //     return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        // }
 
         else {
             if(acao.equals("cadastrar")) {

@@ -1,7 +1,13 @@
 form {
-  width: 500px;
+  width: 50vw;
   margin: 30px auto;
   margin-left: 490px;
+  background-color: antiquewhite;
+  border: 10px groove;
+}
+
+table {
+  margin-left: 12vw;
 }
 
 form input {
@@ -10,4 +16,13 @@ form input {
 
 form input[type = "button"] {
   margin-right: 10px;
+}
+
+.data {
+  background-color: rgba(178, 174, 168, 0.274);
+}
+
+.data:hover {
+  background-color: rgba(178, 174, 168, 0.274);
+
 }
