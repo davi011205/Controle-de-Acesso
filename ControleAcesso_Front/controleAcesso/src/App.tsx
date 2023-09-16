@@ -48,13 +48,11 @@ function App() {
     setBtnCadastrar(true); //botao cadastro visivel e outros nao
   }
 
-
   //seleciona visitante
   const selecionaVisitante = (indice) => {
     setObjVisitante(visitantes[indice]);
     setBtnCadastrar(false);
   }
-
 
   //cadastra visitante
   const cadastrar = () => {
@@ -79,7 +77,6 @@ function App() {
 
     })
   }
-
 
   //remove visitante
   const remover = () => {
@@ -152,10 +149,6 @@ function App() {
 
     })
   }
-
-
-
-
 
   return (
     <>
