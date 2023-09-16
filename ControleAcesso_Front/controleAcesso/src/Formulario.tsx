@@ -1,7 +1,7 @@
 function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover, alterar}) {
 
     return (
-        <form action="">
+        <form>
             <div className="dadosPessoais"> 
                 <h1> Dados Pessoais</h1>
                 <input type="date"  placeholder="data"  className="btn data"     onChange={eventoTeclado} value={obj.data}  name="data"/>
@@ -11,7 +11,8 @@ function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover, al
                 <input type="email" placeholder="email" className="form-control" onChange={eventoTeclado} value={obj.email} name="email"  />
                 
                 <label htmlFor="acesso">Situação: </label>
-                <select id="acesso" name="situacao" onChange={eventoTeclado}> 
+                <select id="acesso" name="situacao" onClick={eventoTeclado}> 
+                    <option></option>
                     <option value={"permitido"}> Permitido </option>
                     <option value={"negado"}> Negado </option>
                 </select>
@@ -25,7 +26,6 @@ function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover, al
                 <input type="text" onChange={eventoTeclado} value={obj.observacao} name="observacao" placeholder="observação" className="form-control"/>
             </div>
 
-
             <div className="dadosContato"> 
                 <h1>Dados para Contato</h1>
                 <input type="text" onChange={eventoTeclado} value={obj.endereco} name="endereco" className="form-control" placeholder="endereço"/>
@@ -35,14 +35,16 @@ function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover, al
                 <input type="text" onChange={eventoTeclado} value={obj.outroDoc} name="outroDoc" className="form-control" placeholder="outro documento"/>
 
                 <label htmlFor="sexo">sexo: </label>
-                <select id="sexo" name="sexo" onChange={eventoTeclado}> 
+                <select id="sexo" name="sexo" onClick={eventoTeclado}> 
+                    <option></option>
                     <option value={"masculino"}> Masculino </option>
                     <option value={"feminino"}> Feminino </option>
                     <option value={"prefiro nao informar"}> Prefiro não informar </option>
                 </select>
 
                 <label htmlFor="portaria">Portaria: </label>
-                <select id="portaria" name="portaria" onChange={eventoTeclado}> 
+                <select id="portaria" name="portaria" onClick={eventoTeclado}> 
+                    <option></option>
                     <option value={"VG1 - Portaria Principal Amazonas, Av.5253"}> VG1 - Portaria Principal Amazonas, Av.5253 </option>
                     <option value={"VG2 - Portaria Alpes, R.Alpes, 418"}> VG2 - Portaria Alpes, R.Alpes, 418 </option>
                 </select>

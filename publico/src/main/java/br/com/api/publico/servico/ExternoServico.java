@@ -34,14 +34,17 @@ public class ExternoServico {
             rm.setMensagem("o rg deve conter 11 caracteres");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
         }
-        // else if(em.getAtivo().equals("")) {
-        //     rm.setMensagem("o campo 'ativo' é obrigatório");
-        //     return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-        // }
-        // else if(em.getData().equals("")) {
-        //     rm.setMensagem("a data é obrigatória");
-        //     return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-        // }
+
+        else if(em.getSituacao().equals("")) {
+            rm.setMensagem("selecione a situação do visitante");
+            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        }
+
+        else if(em.getData().equals("")) {
+            rm.setMensagem("a data é obrigatória");
+            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        }
+
         else if(em.getEndereco().equals("")) {
             rm.setMensagem("o endereço é obrigatório");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
@@ -51,22 +54,30 @@ public class ExternoServico {
             rm.setMensagem("preencha ao menos um número de telefone");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
         }
-        // else if (em.getFone1().length() != 9 || em.getFone2().length() != 9 ) {
-        //     rm.setMensagem("o telefone deve conter 9 caracteres");
-        //     return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-        // }
+
         else if(em.getNome().equals("")) {
             rm.setMensagem("o nome é obrigatório");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
         }
-        else if (em.getCpf().length() != 11 ) {
+        else if(em.getNome().length() < 3) {
+            rm.setMensagem("o nome deve ter ao menos 3 caracteres");
+            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        }
+
+        else if (em.getCpf() != "" && em.getCpf().length() != 11 ) {
             rm.setMensagem("o cpf deve conter 11 caracteres");
             return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
         }
-        // else if(em.getPortaria().equals("")) {
-        //     rm.setMensagem("preencha o campo 'portaria");
-        //     return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
-        // }
+
+        else if(em.getPortaria().equals("")) {
+            rm.setMensagem("selecione uma portaria");
+            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        }
+
+        else if(em.getSexo().equals("")) {
+            rm.setMensagem("selecione o sexo do visitante");
+            return new ResponseEntity<RespostaModelo>(rm, HttpStatus.BAD_REQUEST);
+        }
 
         else {
             if(acao.equals("cadastrar")) {
@@ -84,4 +95,6 @@ public class ExternoServico {
         rm.setMensagem("O visitante foi removido com sucesso");
         return new ResponseEntity<RespostaModelo>(rm, HttpStatus.OK);
     }
+
+    
 }
