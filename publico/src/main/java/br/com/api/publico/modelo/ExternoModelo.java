@@ -20,7 +20,7 @@ public class ExternoModelo {
     private String fotoDoc; //url da foto do doc da
     private String sexo;
     private String origem; //escola, empresa, etc
-    private String ativo; //pode entrar ou n
+    private String situacao; //pode entrar ou n
     private String observacao;
     private String endereco;
     private String fone1;

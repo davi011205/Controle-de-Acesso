@@ -14,7 +14,7 @@ function App() {
     fotoDoc: '',
     sexo: '',
     origem: '',
-    ativo: '',
+    situacao: '',
     observacao: '',
     endereco: '',
     fone1: '',

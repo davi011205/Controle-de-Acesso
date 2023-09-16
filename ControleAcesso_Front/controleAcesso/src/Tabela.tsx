@@ -1,10 +1,12 @@
+import './App.css'
+
 function Tabela({vetor, selecionar}) {
 
     return (
         <table className="table">
             <thead>
                 <tr>
-                    <th>Nº</th>
+                    {/* <th>Nº</th> */}
                     <th>Data</th>
                     <th>Nome</th>
                     <th>Rg</th>
@@ -22,7 +24,7 @@ function Tabela({vetor, selecionar}) {
                 {
                     vetor.map((obj, indice) => (
                         <tr key={indice}>
-                            <td>{indice + 1}</td>
+                            {/* <td>{indice + 1}</td> */}
                             <td>{obj.data}</td>
                             <td>{obj.nome}</td>
                             <td>{obj.rg}</td>
