@@ -23,5 +23,28 @@ form input[type = "button"] {
 }
 
 .data:hover {
-  background-color: rgba(178, 174, 168, 0.274);
+  background-color: rgba(206, 137, 35, 0.274);
+}
+
+.form-control-sm {
+  width: auto;
+  background: rgba(245, 222, 179, 0.177);
+  border: 2px solid rgb(255, 168, 6)
+}
+
+.dropdown-toggle, option {
+  background: wheat;
+  border: 2px solid rgb(177, 151, 102);
+}
+
+.dropdown-toggle:hover {
+  background: rgb(228, 194, 129);
+}
+
+select {
+  margin-right: 2vh;
+}
+
+label {
+  margin-right: 1vh;
 }

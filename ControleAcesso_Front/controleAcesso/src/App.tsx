@@ -151,10 +151,10 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objVisitante} cancelar={limparForm} remover={remover} alterar={alterar} />
       <Tabela vetor={visitantes} selecionar={selecionaVisitante}/>
-    </>
+    </div>
   )
 }
 

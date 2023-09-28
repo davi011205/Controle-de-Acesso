@@ -11,8 +11,8 @@ function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover, al
                 <input type="email" placeholder="email" className="form-control" onChange={eventoTeclado} value={obj.email} name="email"  />
                 
                 <label htmlFor="acesso">Situação: </label>
-                <select id="acesso" name="situacao" onClick={eventoTeclado}> 
-                    <option></option>
+                <select className="btn dropdown-toggle" id="acesso" name="situacao" onClick={eventoTeclado}> 
+                    <option> selecione uma opção</option>
                     <option value={"permitido"}> Permitido </option>
                     <option value={"negado"}> Negado </option>
                 </select>
@@ -21,7 +21,7 @@ function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover, al
                 <input id="foto" type="file"    onChange={eventoTeclado} value={obj.foto} name="foto" />
 
                 <label htmlFor="fotoDoc">Foto do Documento: </label>
-                <input id="fotoDoc" type="file" onChange={eventoTeclado} value={obj.fotoDoc} name="fotoDoc" />
+                <input id="fotoDoc" className="form-control-file" type="file" onChange={eventoTeclado} value={obj.fotoDoc} name="fotoDoc" />
 
                 <input type="text" onChange={eventoTeclado} value={obj.observacao} name="observacao" placeholder="observação" className="form-control"/>
             </div>
@@ -35,16 +35,16 @@ function Formulario({botao, eventoTeclado, cadastrar, obj, cancelar, remover, al
                 <input type="text" onChange={eventoTeclado} value={obj.outroDoc} name="outroDoc" className="form-control" placeholder="outro documento"/>
 
                 <label htmlFor="sexo">sexo: </label>
-                <select id="sexo" name="sexo" onClick={eventoTeclado}> 
-                    <option></option>
+                <select className="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="sexo" name="sexo" onClick={eventoTeclado}> 
+                    <option>selecione uma opção</option>
                     <option value={"masculino"}> Masculino </option>
                     <option value={"feminino"}> Feminino </option>
                     <option value={"prefiro nao informar"}> Prefiro não informar </option>
                 </select>
 
                 <label htmlFor="portaria">Portaria: </label>
-                <select id="portaria" name="portaria" onClick={eventoTeclado}> 
-                    <option></option>
+                <select className="btn dropdown-toggle" id="portaria" name="portaria" onClick={eventoTeclado}> 
+                    <option>selecione uma opção</option>
                     <option value={"VG1 - Portaria Principal Amazonas, Av.5253"}> VG1 - Portaria Principal Amazonas, Av.5253 </option>
                     <option value={"VG2 - Portaria Alpes, R.Alpes, 418"}> VG2 - Portaria Alpes, R.Alpes, 418 </option>
                 </select>
