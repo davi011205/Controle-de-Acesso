@@ -1,5 +1,9 @@
 package br.com.api.publico.servico;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +27,17 @@ public class ExternoServico {
     public Iterable<ExternoModelo> listar() {
         return er.findAll();
     }
+
+    //metodo para ordenar os visitantes pela data 
+    public Iterable<ExternoModelo> listarPorData() {
+        Iterable<ExternoModelo> todosRegistros = listar();
+        List<ExternoModelo> registrosOrdenados = new ArrayList<>();
+        todosRegistros.forEach(registrosOrdenados::add);
+        registrosOrdenados.sort(Comparator.comparing(ExternoModelo::getData).reversed());
+
+        return registrosOrdenados;
+    }
+
 
     //metodo para cadastrar ou alterar visitantes
     public ResponseEntity<?> cadastrarAlterar(ExternoModelo em, String acao) {

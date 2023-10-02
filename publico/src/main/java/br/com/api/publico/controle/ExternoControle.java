@@ -42,4 +42,10 @@ public class ExternoControle {
         return es.remover(rg);
     }
 
+    //lista os visitante do mais recente pro mais antigo
+    @GetMapping("/listarPorData")
+    public Iterable<ExternoModelo> listarPorData() {
+        return es.listarPorData();
+    }
+
 }

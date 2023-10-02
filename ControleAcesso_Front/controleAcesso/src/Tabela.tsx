@@ -23,7 +23,7 @@ function Tabela({vetor, selecionar}) {
                     vetor.map((obj, indice) => (
                         <tr key={indice}>
                             {/* <td>{indice + 1}</td> */}
-                            <td>{obj.data}</td>
+                            <td>{new Date(obj.data).toLocaleDateString('pt-BR')}</td>
                             <td>{obj.nome}</td>
                             <td>{obj.rg}</td>
                             <td>{obj.cpf}</td>

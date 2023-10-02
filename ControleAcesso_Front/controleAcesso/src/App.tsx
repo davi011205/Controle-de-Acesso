@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Formulario from './Formulario'
 import Tabela from './Tabela'
+import Filtro from './Filtro'
+import Pesquisa from './Pesquisa'
 
 function App() {
 
@@ -32,7 +34,7 @@ function App() {
 
   //useEffect
   useEffect(() => {
-    fetch("http://localhost:8090/listar")
+    fetch("http://localhost:8090/listarPorData")
     .then(retorno => retorno.json())
     .then(retorno_convertido => setVisitantes(retorno_convertido));
   }, [])
@@ -153,6 +155,8 @@ function App() {
   return (
     <div>
       <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar} cadastrar={cadastrar} obj={objVisitante} cancelar={limparForm} remover={remover} alterar={alterar} />
+      <Filtro/>
+      <Pesquisa />
       <Tabela vetor={visitantes} selecionar={selecionaVisitante}/>
     </div>
   )
