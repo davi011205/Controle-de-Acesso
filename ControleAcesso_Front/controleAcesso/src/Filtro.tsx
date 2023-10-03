@@ -24,7 +24,7 @@ function Filtro() {
 
   return (
     <>
-      <button className="botaoFiltro btn btn-primary" onClick={toggleFiltro}>Aplicar filtros</button>
+      <button className="botaoFiltro btn btn-primary" onClick={toggleFiltro}>Filtrar</button>
 
       <div className="filtro" style={{ display: filtroVisivel ? "inline" : "none" }}>
         <label className="filtroData" htmlFor="data"> data</label>
@@ -51,6 +51,8 @@ function Filtro() {
             <option value={"prefiro nao informar"}> Prefiro não informar </option>
           </select>
         )}
+
+        <button style={{height: "3vh", fontSize: "0.5vw", marginLeft:"1vw"}} className="btn btn-primary">Aplicar</button>
       </div>
     </>
   );
