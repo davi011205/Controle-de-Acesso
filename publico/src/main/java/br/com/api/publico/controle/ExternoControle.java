@@ -48,4 +48,27 @@ public class ExternoControle {
         return es.listarPorData();
     }
 
+    // Rota para filtrar visitantes por situação
+    @GetMapping("/filtrarPorSituacao/{situacao}")
+    public Iterable<ExternoModelo> filtrarPorSituacao(@PathVariable String situacao) {
+        return es.filtrarPorSituacao(situacao);
+    }
+
+    // Rota para filtrar visitantes por data
+    @GetMapping("/filtrarPorData/{data}")
+    public Iterable<ExternoModelo> filtrarPorData(@PathVariable String data) {
+        return es.filtrarPorData(data);
+    }
+
+    // Rota para filtrar visitantes por sexo
+    @GetMapping("/filtrarPorSexo/{sexo}")
+    public Iterable<ExternoModelo> filtrarPorSexo(@PathVariable String sexo) {
+        return es.filtrarPorSexo(sexo);
+    }
+
+    // Rota para filtrar visitantes por portaria
+    @GetMapping("/filtrarPorPortaria/{portaria}")
+    public Iterable<ExternoModelo> filtrarPorPortaria(@PathVariable String portaria) {
+        return es.filtrarPorPortaria(portaria);
+    }
 }

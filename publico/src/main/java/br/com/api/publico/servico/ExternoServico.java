@@ -39,6 +39,38 @@ public class ExternoServico {
     }
 
 
+    // Método para filtrar visitantes por situação
+    public Iterable<ExternoModelo> filtrarPorSituacao(String situacao) {
+        return er.findBySituacao(situacao);
+    }
+
+    // Método para filtrar visitantes por data
+    public Iterable<ExternoModelo> filtrarPorData(String data) {
+        return er.findByData(data);
+    }
+
+    // Método para filtrar visitantes por sexo
+    public Iterable<ExternoModelo> filtrarPorSexo(String sexo) {
+        return er.findBySexo(sexo);
+    }
+
+    // Método para filtrar visitantes por portaria
+    public Iterable<ExternoModelo> filtrarPorPortaria(String portaria) {
+        return er.findByPortaria(portaria);
+    }
+
+    // Método para pesquisar visitantes por nome, CPF, RG e email
+    public Iterable<ExternoModelo> pesquisar(String chavePesquisa) {
+        return er.findByNomeContainingOrCpfContainingOrRgContainingOrEmailContaining(chavePesquisa, chavePesquisa, chavePesquisa, chavePesquisa);
+    }
+
+
+
+
+
+
+
+
     //metodo para cadastrar ou alterar visitantes
     public ResponseEntity<?> cadastrarAlterar(ExternoModelo em, String acao) {
         if(em.getRg().equals("")) {

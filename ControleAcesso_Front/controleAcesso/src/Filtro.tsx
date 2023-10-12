@@ -51,8 +51,7 @@ function Filtro() {
             <option value={"prefiro nao informar"}> Prefiro não informar </option>
           </select>
         )}
-
-        <button style={{height: "3vh", fontSize: "0.5vw", marginLeft:"1vw"}} className="btn btn-primary">Aplicar</button>
+        
       </div>
     </>
   );
